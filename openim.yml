@@ -1,0 +1,20 @@
+edition: 1.0.0
+name: my-framework-app
+access: default
+services:
+  framework:
+    component: fc
+    props:
+      region: cn-hangzhou
+      service:
+        name: serverless-devs-application
+      function:
+        name: openim-docker-r373
+        description: Initialize
+        runtime: python3.9
+        handler: sh start.sh
+        memorySize: 4096
+        cpu: 1
+        timeout: 60
+        codeUri: ./
+        diskSize: 512
