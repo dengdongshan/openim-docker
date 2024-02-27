@@ -26,12 +26,8 @@ services:
             - make
           args:
             - init
-            - '&'
             - export
-            - OPENIM_IP=$(curl
-            - '-s'
-            - https://api.ipify.org)
-            - '&'
+            - OPENIM_IP=$(curl -s https://api.ipify.org)
             - docker
             - compose
             - up
