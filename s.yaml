@@ -25,7 +25,7 @@ services:
           command:
             - bash 
           args:
-            - 'make init && export OPENIM_IP=$(curl -s https://api.ipify.org) && docker compose up -d'
+            - 'start.sh'
       triggers:
         - name: httpTrigger
           type: http
