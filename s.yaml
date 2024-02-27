@@ -24,11 +24,15 @@ services:
         customRuntimeConfig:
           command:
             - make 
-            - export 
-            - docker 
           args:
             - init
+          command:
+            - export 
+          args:
             - OPENIM_IP=$(curl '-s' https://api.ipify.org)
+          command:
+            - docker 
+          args:
             - compose up '-d'
       triggers:
         - name: httpTrigger
