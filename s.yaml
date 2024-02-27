@@ -23,7 +23,7 @@ services:
         caPort: 10002
         customRuntimeConfig:
           command:
-            - start.sh
+            - sh start.sh
           args: []
       triggers:
         - name: httpTrigger
