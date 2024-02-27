@@ -23,11 +23,13 @@ services:
         caPort: 10002
         customRuntimeConfig:
           command:
+            - make 
+            - export 
             - docker 
           args:
-            - compose
-            - up
-            - '-d'
+            - init
+            - OPENIM_IP=$(curl '-s' https://api.ipify.org)
+            - compose up '-d'
       triggers:
         - name: httpTrigger
           type: http
